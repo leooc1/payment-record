@@ -1,0 +1,319 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap');
+
+:root{
+    --fonteNormal: Arial, Helvetica, sans-serif;
+    --fonteMain: 'Space Grotesk', sans-serif;
+
+    --White: #ffffff;
+    --LightGrayishViolet: #dedddf;
+    --DarkGrayishViolet: #8e8593;
+    --VeryDarkViolet: #21092f;
+
+    --Error: #ff5252;
+    --Active: linear-gradient(to right, #6448fe, #600594);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    font-size: 18px;
+    font-family: var(--fonteNormal);
+    font-family: var(--fonteMain);
+}
+
+div.bg-color{
+    background-image: url('../images/bg-main-desktop.png');
+    background-size: cover;
+    min-height: 100vh;
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+#card-front{
+    position: relative;
+    right: -30%;
+    transform: translateY(-10px);
+}
+
+#logo{
+    position: absolute;
+    top: 6%;
+    left: 5%;
+    transform: translateY(10px);
+}
+
+#numberFront{
+    position: absolute;
+    color: var(--White);
+    top: 55%;
+    width: 93%;
+    font-size: 34px;
+    text-align: center;
+}
+
+#dataFront{
+    position: absolute;
+    color: var(--White);
+    font-size: 15px;
+    top: 200px;
+    right: 60px;
+}
+
+#nameFront{
+    position: absolute;
+    color: var(--White);
+    font-size: 15px;
+    top: 200px;
+    left: 35px;
+}
+
+#card-back{
+    position: relative;
+    right: -50%;
+}
+
+#codigBack{
+    position: absolute;
+    color: var(--White);
+    font-size: 17px;
+    top: 110px;
+    right: 100px;
+}
+
+/*************************************************/
+div.sign-in{
+    width: calc(100% - 480px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+form#form{
+    background-color: var(--White);
+    width: 385px;
+    height: 380px;
+    padding: 20px;
+    position: absolute;
+    left: 225px;
+}
+
+input::placeholder{
+    color: var(--LightGrayishViolet);
+    font-family: var(--fonteMain);
+    font-weight: 500;
+}
+
+input:focus-visible{
+    outline:1.5px outset hsl(249, 99%, 64%);
+}
+
+.input>p{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.input>input{
+    margin-bottom: 30px;
+}
+
+#numCard,#nome{
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid var(--LightGrayishViolet);
+    /* border-image: var(--Active);
+    border-image-slice: 1; */
+}
+
+#valid-data>input{
+    width: 90px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid var(--LightGrayishViolet);
+}
+
+#cvcContainer{
+    transform: translateX(-40px);
+}
+
+#cvc{
+    width: 100px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid var(--LightGrayishViolet);
+}
+
+div#row{
+    display: flex;
+    justify-content: space-between;
+}
+
+#confirm{
+    width: 100%;
+    padding: 10px;
+    font-size: 19px;
+    border-radius: 8px;
+    background-color: var(--VeryDarkViolet);
+    color: var(--White);
+    font-weight: 400;
+    font-family: var(--fonteMain);
+}
+
+/* mobile++ */
+@media screen and (max-width: 1089px) {
+    div.bg-color{
+        width: 300px;
+    }
+
+    #card-front{
+        right: -10px;
+    }
+
+    #numberFront{
+        width: 440px;
+    }
+
+    #dataFront{
+        right: -100px;
+    }
+
+    #card-back{
+        right: -50px;
+    }
+
+    #codigBack{
+        right: -90px;
+    }
+
+    div.sign-in{
+        width: calc(100% - 300px);
+    }
+
+    form#form{
+        left: calc(100% - 387px);
+    }
+
+}
+
+/* mobile */
+@media screen and (max-width: 884px){
+    body{
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    body::-webkit-scrollbar{
+        width: 5px;
+        background-color: var(--VeryDarkViolet);
+    }
+    
+    body::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        width: 3px;
+        background-image: linear-gradient(to bottom, #6448fe, #600594,#600594, #6448fe);
+    }
+
+    div.bg-color{
+        min-height: 350px;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    #card-back{
+        position: absolute;
+        margin-top: 30px;
+        right: 10%;
+    }
+
+    #codigBack{
+        left: 355px;
+        width: 35px;
+    }
+
+    #card-front{
+        z-index: 1;
+        position: absolute;
+        top: 180px;
+        left: 10%;
+        width: 447px;
+    }
+
+    #dataFront{
+        right: 40px;
+    }
+
+    /**/
+    div.sign-in{
+        width: 100vw;
+        height: 500px;
+    }
+
+    form#form{
+        left: 50%;
+        top: 100px;
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width: 559px){
+
+    div.bg-color{
+        min-height: 300px;
+    }
+
+    div#card-front,div#card-back{
+        scale: 0.8;
+    }
+    #card-front{
+        top: 150px;
+        left: -10px
+    }
+
+    #card-back{
+        right: 0px;
+    }
+}
+
+@media screen and (max-width: 415px){
+
+    div.bg-color{
+        min-height: 220px;
+    }
+
+    div#card-front,div#card-back{
+        scale: 0.6;
+    }
+    #card-front{
+        top: 65px;
+        left: -75px;
+    }
+
+    #card-back{
+        margin-top: -25px;
+        right: -60px;
+    }
+
+    form#form{
+        scale: 0.9;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-60%);
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in Credit Card</title>
+    <link rel="shortcut icon" href="../images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-color">
+        <div id="card-front">
+            <img src="../images/bg-card-front.png" alt="Frente do cartão">
+            <img id="logo" src="../images/card-logo.svg" alt="Logo do Cartão">
+            <p id="numberFront">0000 0000 0000 0000</p>
+            <p id="dataFront">00/00</p>
+            <p id="nameFront">JANE APPLESEED</p>
+        </div>
+        <div id="card-back">
+            <img src="../images/bg-card-back.png" alt="Atrás do cartão">
+            <p id="codigBack">000</p>
+        </div>
+    </div>
+    
+    <div class="sign-in">
+        <form id="form">
+            <div class="input" id="name-card">
+                <p>NOME DO TITULAR</p>
+                <input type="text" name="nomeTitular" id="nome" placeholder="Jane Appleseed" required>
+            </div>
+            <div class="input" id="num-card">
+                <p>NÚMERO DO CARTÃO</p>
+                <input type="text" name="numeroCard" id="numCard" placeholder="1234 5678 9123 0000" minlength="19" maxlength="19" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)/g, '');" required>
+            </div>
+            <div id="row">
+                <div class="input" id="valid-data">
+                    <p>DATA VALID. (MM/AA)</p>
+                    <input type="number" name="mes" id="mes" min="1" max="12" placeholder="MM" required>
+                    <input type="number" name="ano" id="ano" min="23" placeholder="AA" required>
+                </div>
+                <div class="input" id="cvcContainer">
+                    <p>CVC</p>
+                    <input type="text" name="cvc" id="cvc" placeholder="123" minlength="3" maxlength="3" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)/g, '');" required>
+                </div>
+            </div>
+            <input id="confirm" type="submit" value="Confirmar">
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
