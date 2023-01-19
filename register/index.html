@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-in Credit Card</title>
+    <title>Registery Credit Card</title>
     <link rel="shortcut icon" href="../images/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -28,25 +28,36 @@
         <form id="form">
             <div class="input" id="name-card">
                 <p>NOME DO TITULAR</p>
-                <input type="text" name="nomeTitular" id="nome" placeholder="Jane Appleseed" required>
+                <input type="text" name="nomeTitular" id="nome" placeholder="Jane Appleseed" >
+                <p class="msg-erro">Espaço vazio</p>
             </div>
             <div class="input" id="num-card">
                 <p>NÚMERO DO CARTÃO</p>
-                <input type="text" name="numeroCard" id="numCard" placeholder="1234 5678 9123 0000" minlength="19" maxlength="19" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)/g, '');" required>
+                <input type="text" name="numeroCard" id="numCard" placeholder="1234 5678 9123 0000" minlength="19" maxlength="19" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)/g, '');" >
+                <p class="msg-erro">Formato errado, faltam números</p>
             </div>
             <div id="row">
                 <div class="input" id="valid-data">
                     <p>DATA VALID. (MM/AA)</p>
-                    <input type="number" name="mes" id="mes" min="1" max="12" placeholder="MM" required>
-                    <input type="number" name="ano" id="ano" min="23" placeholder="AA" required>
+                    <input type="number" name="mes" id="mes" min="1" max="12" placeholder="MM" >
+                    <p class="msg-erro" id="mm">Espaço vazio</p>
+                    <input type="number" name="ano" id="ano" min="23" placeholder="AA" >
+                    <p class="msg-erro" id="aa">Espaço vazio</p>
                 </div>
                 <div class="input" id="cvcContainer">
                     <p>CVC</p>
-                    <input type="text" name="cvc" id="cvc" placeholder="123" minlength="3" maxlength="3" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)/g, '');" required>
+                    <input type="text" name="cvc" id="cvc" placeholder="123" minlength="3" maxlength="3" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)/g, '');" >
+                    <p class="msg-erro" id="vcv">Espaço vazio</p>
                 </div>
             </div>
-            <input id="confirm" type="submit" value="Confirmar">
+            <input id="confirm" type="button" value="Confirmar" onclick="verifica()">
         </form>
+        <div id="complete">
+            <img src="../images/icon-complete.svg" alt="Complete">
+            <p id="thank">AGRADECEMOS!</p>
+            <p id="added">Adicionamos os detalhes do seu cartão</p>
+            <input id="continue" type="button" value="Continuar" onclick="continuar()">
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

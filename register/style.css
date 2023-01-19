@@ -109,7 +109,9 @@ form#form{
     padding: 20px;
     position: absolute;
     left: 225px;
+    /* display: none; */
 }
+
 
 input::placeholder{
     color: var(--LightGrayishViolet);
@@ -174,6 +176,80 @@ div#row{
     color: var(--White);
     font-weight: 400;
     font-family: var(--fonteMain);
+    cursor: pointer;
+}
+
+/**************** COMPLETE ********************/
+#complete{
+    background-color: var(--White);
+    width: 385px;
+    height: 380px;
+    padding: 20px;
+    position: absolute;
+    left: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#thank{
+    margin-top: 15px;
+    font-size: 25px;
+    color: var(--VeryDarkViolet);
+}
+
+#added{
+    margin-top: 15px;
+    font-size: 15px;
+    color: var(--DarkGrayishViolet);
+}
+
+#continue{
+    margin-top: 40px;
+    width: 100%;
+    padding: 10px;
+    font-size: 19px;
+    border-radius: 8px;
+    background-color: var(--VeryDarkViolet);
+    color: var(--White);
+    font-weight: 400;
+    font-family: var(--fonteMain);   
+    cursor: pointer; 
+}
+/**********************************************************************/
+
+input{
+    position: relative;
+}
+
+.msg-erro{
+    position: absolute;
+    color: var(--Error);
+    display: none;
+}
+
+#name-card .msg-erro{
+    top: 90px;
+}
+
+#num-card .msg-erro{
+    top: 185px;
+}
+
+#mm{
+    top: 280px;
+}
+
+#aa{
+    top: 280px;
+    left: 115px;
+}
+
+#vcv{
+    top: 67px;
+    width: 112px;
 }
 
 /* mobile++ */
@@ -207,6 +283,10 @@ div#row{
     }
 
     form#form{
+        left: calc(100% - 387px);
+    }
+
+    #complete{
         left: calc(100% - 387px);
     }
 
@@ -270,6 +350,12 @@ div#row{
         top: 100px;
         transform: translateX(-50%);
     }
+
+    #complete{
+        left: 50%;
+        top: 100px;
+        transform: translateX(-50%);
+    }
 }
 
 @media screen and (max-width: 559px){
@@ -311,6 +397,13 @@ div#row{
     }
 
     form#form{
+        scale: 0.9;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-60%);
+    }
+
+    #complete{
         scale: 0.9;
         top: 30px;
         left: 50%;
