@@ -39,9 +39,9 @@
             <div id="row">
                 <div class="input" id="valid-data">
                     <p>DATA VALID. (MM/AA)</p>
-                    <input type="number" name="mes" id="mes" min="1" max="12" placeholder="MM" >
+                    <input type="text" name="mes" id="mes" min="1" max="12" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)/g, '');" placeholder="MM" >
                     <p class="msg-erro" id="mm">Espaço vazio</p>
-                    <input type="number" name="ano" id="ano" min="23" placeholder="AA" >
+                    <input type="text" name="ano" id="ano" min="23" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)/g, '');" placeholder="AA" >
                     <p class="msg-erro" id="aa">Espaço vazio</p>
                 </div>
                 <div class="input" id="cvcContainer">
